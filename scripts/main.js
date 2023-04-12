@@ -3,7 +3,7 @@ import * as Tone from 'tone';
 const urls = {
     A1: 'sample_3.wav',
 };
-const baseFileUrl = '/assets/audio/';
+const baseFileUrl = '/audio/';
 
 const sampler = new Tone.Sampler({
     urls: urls,
