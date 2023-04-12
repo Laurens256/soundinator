@@ -11,7 +11,7 @@ const sampler = new Tone.Sampler({
 }).toDestination();
 
 // size for the board
-const columns = 8;
+const columns = 12;
 const rows = 3;
 
 let currentStep = 0;
@@ -38,13 +38,13 @@ const playAudio = async () => {
 		// loop through the buttons in the current column
         for (const [row, button] of currentColumn.entries()) {
 			// if the step is not enabled, skip it
-            if (!enabledSteps[currentColumnIndex][row]) continue;
+            if (!enabledSteps[row][currentColumnIndex]) continue;
 
-            let duration = 0;
+            // let duration = 0;
 			// load the buffer and get the duration of the sample
-            const buffer = new Tone.Buffer(`${baseFileUrl}${urls.A1}`, () => {
-                duration = buffer.duration;
-            });
+            // const buffer = new Tone.Buffer(`${baseFileUrl}${urls.A1}`, () => {
+            //     duration = buffer.duration;
+            // });
 
             sampler.triggerAttackRelease('A1', '8n', time);
             // sampler.triggerAttackRelease('A1', duration, time);
