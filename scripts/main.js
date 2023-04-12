@@ -111,8 +111,6 @@ const buildBoard = () => {
             row.appendChild(cell);
         }
     }
-    console.log(columnElements);
-    console.log(enabledSteps);
     first = false;
 };
 
