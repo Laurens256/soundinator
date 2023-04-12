@@ -1,21 +1,32 @@
+@import url(./board.css);
+
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #131313;
+    --button-color-1: #3f3f3f;
+    --button-color-2: #525252;
+    --hightlight-color-1: #ff064a;
+    --hightlight-color-2: #fe7316;
+    --hightlight-color-3: #f4b915;
+}
+
+body {
+    background-color: var(--bg-color);
 }
 
 button {
-	cursor: pointer;
+    border: none;
+    cursor: pointer;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
-}
-
-button.highlight {
-	background-color: #ff6b08;
-	color: #fff;
+    text-decoration: none;
+    color: inherit;
 }
