@@ -15,6 +15,7 @@
 	},
 	"dependencies": {
 		"three": "^0.151.3",
-		"tone": "^14.7.77"
+		"tone": "^14.7.77",
+		"web-audio-api": "^0.2.2"
 	}
 }
