@@ -3,9 +3,10 @@ table {
     flex-direction: column;
     gap: 0.4em;
     margin: 0 auto;
-	min-width: 70vw;
+    min-width: 70vw;
     width: 100%;
     max-width: 1200px;
+    margin-top: 10px;
 }
 tr {
     display: flex;
@@ -22,7 +23,7 @@ table button {
     aspect-ratio: 1 / 1;
     background-color: var(--button-color-1);
     border-radius: 4px;
-    transition: background-color .04s step-end;
+    transition: background-color 0.04s step-end;
 }
 table button:active {
     transform: scale(0.984);

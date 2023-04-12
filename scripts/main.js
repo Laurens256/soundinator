@@ -1,4 +1,7 @@
 import * as Tone from 'tone';
+import { animator } from './anime.js';
+
+animator();
 
 const urls = {
     A1: 'sample_3.wav',
@@ -35,13 +38,13 @@ const playAudio = async () => {
         const currentColumnIndex = currentStep - 1;
         const currentColumn = columnElements[currentColumnIndex];
 
-		// loop through the buttons in the current column
+        // loop through the buttons in the current column
         for (const [row, button] of currentColumn.entries()) {
-			// if the step is not enabled, skip it
+            // if the step is not enabled, skip it
             if (!enabledSteps[row][currentColumnIndex]) continue;
 
             // let duration = 0;
-			// load the buffer and get the duration of the sample
+            // load the buffer and get the duration of the sample
             // const buffer = new Tone.Buffer(`${baseFileUrl}${urls.A1}`, () => {
             //     duration = buffer.duration;
             // });
@@ -49,23 +52,23 @@ const playAudio = async () => {
             sampler.triggerAttackRelease('A1', '8n', time);
             // sampler.triggerAttackRelease('A1', duration, time);
         }
-		highlightCurrentStep(currentColumnIndex);
+        highlightCurrentStep(currentColumnIndex);
     });
 
     Tone.Transport.start();
 };
 
 const pauseAudio = () => {
-	Tone.Transport.stop();
+    Tone.Transport.stop();
 };
 
 // loop through all the steps and highlight the column that corresponds to the current step
 const highlightCurrentStep = (currentStep = 0) => {
-	columnElements.forEach((column, i) => {
-		column.forEach((button) => {
-			button.classList.toggle('highlight', i == currentStep);
-		});
-	});
+    columnElements.forEach((column, i) => {
+        column.forEach((button) => {
+            button.classList.toggle('highlight', i == currentStep);
+        });
+    });
 };
 
 let first = true;
