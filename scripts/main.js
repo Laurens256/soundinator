@@ -56,7 +56,7 @@ const playAudio = async () => {
 };
 
 const pauseAudio = () => {
-	Tone.Transport.stop();
+	Tone.Transport.pause();
 };
 
 // loop through all the steps and highlight the column that corresponds to the current step
