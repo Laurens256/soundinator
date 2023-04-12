@@ -1,0 +1,38 @@
+table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    width: 100%;
+}
+tr {
+    display: flex;
+    gap: 0.4em;
+    width: 100%;
+}
+td {
+    display: flex;
+    width: 100%;
+}
+
+table button {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--button-color-1);
+}
+td:nth-of-type(4n + 1) button {
+    background-color: var(--button-color-2);
+}
+
+[data-row='1'] button.active {
+    background-color: var(--hightlight-color-1);
+}
+[data-row='2'] button.active {
+    background-color: var(--hightlight-color-2);
+}
+[data-row='3'] button.active {
+    background-color: var(--hightlight-color-3);
+}
+
+button.highlight {
+    background-color: #fff !important;
+}
