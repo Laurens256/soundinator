@@ -12,7 +12,7 @@ const sampler = new Tone.Sampler({
 
 // size for the board
 const columns = 8;
-const rows = 4;
+const rows = 3;
 
 let currentStep = 0;
 // will become a 2D array to keep track of which steps are enabled
@@ -28,8 +28,6 @@ const init = () => {
 
 const playAudio = async () => {
     await Tone.start();
-    // Tone.Transport.stop();
-    // Tone.Transport.cancel();
 
     Tone.Transport.scheduleRepeat((time) => {
         currentStep = (currentStep % columns) + 1;
@@ -51,6 +49,7 @@ const playAudio = async () => {
             sampler.triggerAttackRelease('A1', '8n', time);
             // sampler.triggerAttackRelease('A1', duration, time);
         }
+		highlightCurrentStep(currentColumnIndex);
     });
 
     Tone.Transport.start();
@@ -58,6 +57,15 @@ const playAudio = async () => {
 
 const pauseAudio = () => {
 	Tone.Transport.stop();
+};
+
+// loop through all the steps and highlight the column that corresponds to the current step
+const highlightCurrentStep = (currentStep = 0) => {
+	columnElements.forEach((column, i) => {
+		column.forEach((button) => {
+			button.classList.toggle('highlight', i == currentStep);
+		});
+	});
 };
 
 let first = true;
@@ -78,11 +86,9 @@ const buildBoard = () => {
             const cell = document.createElement('td');
             const button = document.createElement('button');
 
-            cell.classList.add('cell');
-            cell.dataset.col = rowIndex;
-            cell.dataset.row = colIndex;
+            cell.dataset.col = colIndex + 1;
+            cell.dataset.row = rowIndex + 1;
 
-            button.classList.add('cell-btn');
             button.textContent = j + 1;
 
             // on click, toggle the value of the corresponding step in the enabledSteps array
