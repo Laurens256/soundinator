@@ -77,7 +77,7 @@ const buildBoard = () => {
 
         const row = document.createElement('tr');
         row.classList.add('row');
-        row.dataset.row = rowIndex;
+        row.dataset.row = rowIndex + 1;
         table.appendChild(row);
 
         for (let j = 0; j < columns; j++) {
@@ -88,8 +88,6 @@ const buildBoard = () => {
 
             cell.dataset.col = colIndex + 1;
             cell.dataset.row = rowIndex + 1;
-
-            button.textContent = j + 1;
 
             // on click, toggle the value of the corresponding step in the enabledSteps array
             button.addEventListener('click', () => {
