@@ -40,11 +40,11 @@ const playAudio = async () => {
 			// if the step is not enabled, skip it
             if (!enabledSteps[row][currentColumnIndex]) continue;
 
-            let duration = 0;
+            // let duration = 0;
 			// load the buffer and get the duration of the sample
-            const buffer = new Tone.Buffer(`${baseFileUrl}${urls.A1}`, () => {
-                duration = buffer.duration;
-            });
+            // const buffer = new Tone.Buffer(`${baseFileUrl}${urls.A1}`, () => {
+            //     duration = buffer.duration;
+            // });
 
             sampler.triggerAttackRelease('A1', '8n', time);
             // sampler.triggerAttackRelease('A1', duration, time);
