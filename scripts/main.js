@@ -77,7 +77,7 @@ const buildBoard = () => {
 
         const row = document.createElement('tr');
         row.classList.add('row');
-        row.dataset.row = rowIndex;
+        row.dataset.row = rowIndex + 1;
         table.appendChild(row);
 
         for (let j = 0; j < columns; j++) {
