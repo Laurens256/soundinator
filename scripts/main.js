@@ -89,8 +89,6 @@ const buildBoard = () => {
             cell.dataset.col = colIndex + 1;
             cell.dataset.row = rowIndex + 1;
 
-            button.textContent = j + 1;
-
             // on click, toggle the value of the corresponding step in the enabledSteps array
             button.addEventListener('click', () => {
                 enabledSteps[rowIndex][colIndex] =
