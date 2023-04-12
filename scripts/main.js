@@ -38,7 +38,7 @@ const playAudio = async () => {
 		// loop through the buttons in the current column
         for (const [row, button] of currentColumn.entries()) {
 			// if the step is not enabled, skip it
-            if (!enabledSteps[currentColumnIndex][row]) continue;
+            if (!enabledSteps[row][currentColumnIndex]) continue;
 
             let duration = 0;
 			// load the buffer and get the duration of the sample
