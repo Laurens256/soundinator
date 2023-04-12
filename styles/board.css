@@ -27,15 +27,15 @@ td:nth-of-type(4n + 1) button {
 }
 
 [data-row='1'] button.active {
-    background-color: var(--hightlight-color-1);
+    background-color: var(--active-color-1);
 }
 [data-row='2'] button.active {
-    background-color: var(--hightlight-color-2);
+    background-color: var(--active-color-2);
 }
 [data-row='3'] button.active {
-    background-color: var(--hightlight-color-3);
+    background-color: var(--active-color-3);
 }
 
 button.highlight {
-    background-color: #fff !important;
+    background-color: var(--highlight-color) !important;
 }
