@@ -11,7 +11,7 @@ const sampler = new Tone.Sampler({
 }).toDestination();
 
 // size for the board
-const columns = 8;
+const columns = 12;
 const rows = 3;
 
 let currentStep = 0;
