@@ -21,6 +21,11 @@ table button {
     width: 100%;
     aspect-ratio: 1 / 1;
     background-color: var(--button-color-1);
+    border-radius: 4px;
+    transition: background-color .04s step-end;
+}
+table button:active {
+    transform: scale(0.984);
 }
 td:nth-of-type(4n + 1) button {
     background-color: var(--button-color-2);
