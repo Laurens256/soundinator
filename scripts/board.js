@@ -4,6 +4,7 @@ import { delay } from './controls';
 const buildBoard = () => {
     const table = document.querySelector('main.board table');
 	table.style.setProperty('--delay', delay + 's');
+	table.style.setProperty('--columns', columns);
 
     // loop through rows
     for (let rowIndex = 0; rowIndex < rows; rowIndex++) {

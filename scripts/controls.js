@@ -6,7 +6,10 @@ import { highlightCurrentStep } from './board';
 let currentStep = 0;
 let delay = 0.25;
 
+const board = document.querySelector('main.board table');
+
 const playAudio = async () => {
+	board.classList.add('playing');
     await Tone.start();
 
     Tone.Transport.scheduleRepeat((time) => {
@@ -30,6 +33,7 @@ const playAudio = async () => {
 
 const pauseAudio = () => {
 	Tone.Transport.cancel();
+	board.classList.remove('playing');
 };
 
 const playButton = document.querySelector('button.playbtn');
