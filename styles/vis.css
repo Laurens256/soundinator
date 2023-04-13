@@ -2,15 +2,24 @@ body {
     background: red;
 }
 
+/* vis main */
+.vis2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    /* grid-template-columns: 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px; */
     gap: 2px;
 }
 
 .cell {
-    width: 18px;
-    height: 18px;
+    aspect-ratio: 1 / 1;
     background: #6982ff;
     border-radius: 2px;
 }
@@ -41,4 +50,8 @@ body {
     border: 2px solid rgb(255, 255, 255);
     border-radius: 2em;
     box-shadow: 0 0 10px #ffffff;
+}
+
+.page2 {
+    position: absolute;
 }
