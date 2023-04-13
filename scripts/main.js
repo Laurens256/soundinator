@@ -3,7 +3,9 @@ import { buildBoard } from './board';
 import './controls';
 
 const baseFileUrl = '/audio/';
-const sfx = ['kick.wav', 'snare.wav', 'holy.wav', 'yeat_bell.wav', 'phonk_bell.wav'];
+// const sfx = ['kick.wav', 'snare.wav', 'holy.wav', 'yeat_bell.wav', 'phonk_bell.wav'];
+// prettier-ignore
+const sfx = ['testaudio_bass1.mp3', 'testaudio_bass2.mp3', 'testaudio_clap1.mp3', 'testaudio_melody1.mp3', 'testaudio_melody2.mp3', 'testaudio_melody3.mp3'];
 
 const players = sfx.map((file) => {
     const player = new Tone.Player({
