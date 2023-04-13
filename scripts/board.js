@@ -2,21 +2,34 @@ import { rows, columns, enabledSteps, boardElements } from './main';
 import { delay } from './controls';
 
 // prettier-ignore
-const rowColors = ['#ff064a', '#fe7316', '#f4b915', '#0DC75A', '#1ACBF7', '#8057F5', '#FF74B7', '#C6194E'];
+const rowColors = ['#ff064a', '#fe7316', '#f4b915', '#0dc75a', '#1acbf7', '#8057f5', '#ff74b7', '#c6194e'];
 
 const buildBoard = () => {
     const table = document.querySelector('main.board table');
-	table.style.setProperty('--delay', delay + 's');
-	table.style.setProperty('--columns', columns);
+    table.style.setProperty('--delay', delay + 's');
+    table.style.setProperty('--columns', columns);
 
     // loop through rows
     for (let rowIndex = 0; rowIndex < rows; rowIndex++) {
         const row = document.createElement('tr');
         row.classList.add('row');
         row.dataset.row = rowIndex + 1;
+
+        const div = document.createElement('div');
+        const img = document.createElement('img');
+        if (rowIndex === 0) img.src = '/img/drum.svg';
+        if (rowIndex === 1) img.src = '/img/bass.svg';
+        if (rowIndex === 2) img.src = '/img/cymbal.svg';
+        if (rowIndex === 3 || rowIndex === 4 || rowIndex === 5) {
+            img.src = '/img/mic.svg';
+        }
+        img.alt = 'instrument corresponding to sound of row';
+        div.appendChild(img);
+        row.appendChild(div);
+
         table.appendChild(row);
 
-		row.style.setProperty('--active-row-color', rowColors[rowIndex]);
+        row.style.setProperty('--active-row-color', rowColors[rowIndex]);
 
         // within each row, loop through columns
         for (let colIndex = 0; colIndex < columns; colIndex++) {
