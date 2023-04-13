@@ -1,0 +1,44 @@
+body {
+    background: red;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px 18px;
+    gap: 2px;
+}
+
+.cell {
+    width: 18px;
+    height: 18px;
+    background: #6982ff;
+    border-radius: 2px;
+}
+
+#note {
+    font-size: 1.5em;
+    margin-right: 16px;
+    color: #fafafa;
+}
+
+#note::before {
+    content: 'Playing ';
+}
+
+.grid span {
+    color: grey;
+}
+
+.vis {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.vis a {
+    color: white;
+    padding: 0.5em 1em;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 2em;
+    box-shadow: 0 0 10px #ffffff;
+}
