@@ -4,6 +4,7 @@ import { highlightCurrentStep } from './board';
 
 // keep track of the current step
 let currentStep = 0;
+let delay = 0.25;
 
 const playAudio = async () => {
     await Tone.start();
@@ -22,7 +23,7 @@ const playAudio = async () => {
             sampler.triggerAttackRelease('A1', '8n', time);
         }
         highlightCurrentStep(currentColumnIndex);
-    }, 0.25);
+    }, delay);
 
     Tone.Transport.start();
 };
@@ -36,3 +37,5 @@ const pauseButton = document.querySelector('button.pausebtn');
 
 playButton.addEventListener('click', playAudio);
 pauseButton.addEventListener('click', pauseAudio);
+
+export { delay };

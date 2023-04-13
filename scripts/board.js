@@ -1,7 +1,9 @@
 import { rows, columns, enabledSteps, columnElements } from './main';
+import { delay } from './controls';
 
 const buildBoard = () => {
     const table = document.querySelector('main.board table');
+	table.setProperty('--delay', delay);
 
     // loop through rows
     for (let rowIndex = 0; rowIndex < rows; rowIndex++) {
