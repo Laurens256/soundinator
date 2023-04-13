@@ -6,6 +6,9 @@
     width: 4em;
     height: 4em;
     background-color: transparent;
+    position: absolute;
+    bottom: 2em;
+    left: 6em;
 }
 
 .togglePlayButton svg {
@@ -44,7 +47,8 @@ table::after {
     width: 2px;
     height: 100%;
     background-color: var(--highlight-color);
-    animation: moveLine calc(var(--columns, 16) * var(--delay, 0.25s)) infinite linear paused;
+    animation: moveLine calc(var(--columns, 16) * var(--delay, 0.25s)) infinite
+        linear paused;
 }
 
 table.playing::after {
