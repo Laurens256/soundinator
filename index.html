@@ -11,11 +11,19 @@
         <script src="/scripts/main.js" type="module"></script>
     </head>
     <body>
-        <button class="playbtn">Play</button>
-        <button class="pausebtn">Pause</button>
+        <!-- prettier-ignore -->
+        <button class="togglePlayButton">
+            <svg id="svgPlay" width="389" height="512" viewBox="0 0 389 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0L388.129 256L0 512V0Z" />
+            </svg>
+            <svg id="svgPause" width="384" height="512" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M128 0H0V512H128V0Z" />
+                <path d="M383.973 0H255.973V512H383.973V0Z" />
+            </svg>
+        </button>
 
         <main class="board">
-			<table></table>
-		</main>
+            <table></table>
+        </main>
     </body>
 </html>
