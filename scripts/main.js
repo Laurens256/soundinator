@@ -1,9 +1,16 @@
 import * as Tone from 'tone';
 import { buildBoard } from './board';
 import './controls';
+import * as panel from './panel.js';
 
 const baseFileUrl = '/audio/';
-const sfx = ['kick.wav', 'snare.wav', 'holy.wav', 'yeat_bell.wav', 'phonk_bell.wav'];
+const sfx = [
+    'kick.wav',
+    'snare.wav',
+    'holy.wav',
+    'yeat_bell.wav',
+    'phonk_bell.wav',
+];
 
 const players = sfx.map((file) => {
     const player = new Tone.Player({

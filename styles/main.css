@@ -1,4 +1,5 @@
 @import url(./board.css);
+@import url(./panel.css);
 
 *,
 *::before,
@@ -17,6 +18,12 @@
 
 body {
     background-color: var(--bg-color);
+}
+
+main {
+    display: flex;
+    padding: 25em 0 0 0;
+    gap: 2em;
 }
 
 button {

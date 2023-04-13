@@ -6,6 +6,9 @@
     width: 4em;
     height: 4em;
     background-color: transparent;
+    position: absolute;
+    bottom: 2em;
+    left: 6em;
 }
 
 .togglePlayButton svg {
@@ -27,28 +30,29 @@
 
 /* music board */
 table {
-	--table-gap: 0.4em;
-	position: relative;
+    --table-gap: 0.4em;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     min-width: 70vw;
     width: 100%;
     max-width: 1200px;
-	gap: var(--table-gap);
+    gap: var(--table-gap);
 }
 
 table::after {
-	content: '';
+    content: '';
     position: absolute;
     width: 2px;
     height: 100%;
     background-color: var(--highlight-color);
-    animation: moveLine calc(var(--columns, 16) * var(--delay, 0.25s)) infinite linear paused;
+    animation: moveLine calc(var(--columns, 16) * var(--delay, 0.25s)) infinite
+        linear paused;
 }
 
 table.playing::after {
-	animation-play-state: running;
+    animation-play-state: running;
 }
 
 tr {
@@ -79,7 +83,7 @@ td:nth-of-type(4n + 1) button {
 }
 
 table button.active {
-	background-color: var(--active-row-color);
+    background-color: var(--active-row-color);
 }
 
 @keyframes moveLine {

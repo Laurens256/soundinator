@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #252423;
+}
+
+h1 {
+    position: absolute;
+    bottom: 3em;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2em 2em 2em 2em 2em 2em 2em 2em 2em 2em;
+    gap: 2px;
+    margin-top: 10em;
+    margin-bottom: 1em;
+}
+
+.cell {
+    width: 2em;
+    height: 2em;
+    background: rgb(0, 214, 114);
+    border-radius: 2px;
+}
+
+.cell:hover {
+    background: rgb(0, 160, 85);
+}
+
+#tone {
+    color: gray;
+    margin-top: 32px;
+}
