@@ -1,17 +1,34 @@
 table {
+	--table-gap: 0.4em;
+	position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--board-gap);
     margin: 0 auto;
     min-width: 70vw;
     width: 100%;
     max-width: 1200px;
+	gap: var(--table-gap);
 }
+
+table::after {
+	content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--highlight-color);
+    animation: moveLine calc(var(--columns, 16) * var(--delay, 0.25s)) infinite linear paused;
+}
+
+table.playing::after {
+	animation-play-state: running;
+}
+
 tr {
     display: flex;
-    gap: var(--board-gap);
+    gap: var(--table-gap);
     width: 100%;
 }
+
 td {
     display: flex;
     width: 100%;
@@ -24,9 +41,11 @@ table button {
     border-radius: 4px;
     transition: background-color 0.04s step-end;
 }
+
 table button:active {
     transform: scale(0.984);
 }
+
 td:nth-of-type(4n + 1) button {
     background-color: var(--button-color-2);
 }
@@ -41,33 +60,11 @@ td:nth-of-type(4n + 1) button {
     background-color: var(--active-color-3);
 }
 
-button.highlight {
-    position: relative;
-}
-
-button.highlight::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: var(--highlight-color);
-    transform: translateY(-50%);
-    animation: moveLine calc(var(--delay) - 0.02s) linear;
-    animation-fill-mode: forwards;
-}
-tr:not(:first-child):not(:last-child) button.highlight::after {
-    height: calc(100% + var(--board-gap) * 2 + 8px);
-}
-tr td:last-of-type button.highlight::after {
-    --board-gap: 0em;
-}
 @keyframes moveLine {
     0% {
         left: 0;
     }
     100% {
-        left: calc(100% + var(--board-gap));
+        left: 100%;
     }
 }
