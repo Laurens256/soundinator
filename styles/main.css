@@ -35,3 +35,11 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.logo {
+    position: absolute;
+    top: 1em;
+    width: 60%;
+    margin: 0 auto;
+    right: 2em;
+}
