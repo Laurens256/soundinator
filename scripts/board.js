@@ -1,5 +1,8 @@
-import { rows, columns, enabledSteps, columnElements } from './main';
+import { rows, columns, enabledSteps, boardElements } from './main';
 import { delay } from './controls';
+
+// prettier-ignore
+const rowColors = ['#ff064a', '#fe7316', '#f4b915', '#0DC75A', '#1ACBF7', '#8057F5', '#FF74B7', '#C6194E'];
 
 const buildBoard = () => {
     const table = document.querySelector('main.board table');
@@ -12,6 +15,8 @@ const buildBoard = () => {
         row.classList.add('row');
         row.dataset.row = rowIndex + 1;
         table.appendChild(row);
+
+		row.style.setProperty('--active-row-color', rowColors[rowIndex]);
 
         // within each row, loop through columns
         for (let colIndex = 0; colIndex < columns; colIndex++) {
@@ -29,11 +34,11 @@ const buildBoard = () => {
                 button.classList.toggle('active');
             });
 
-            // add each button to the columnElements array
-            if (!columnElements[colIndex]) {
-                columnElements[colIndex] = [];
+            // add each button to the boardElements array
+            if (!boardElements[colIndex]) {
+                boardElements[colIndex] = [];
             }
-            columnElements[colIndex].push(button);
+            boardElements[colIndex].push(button);
 
             cell.appendChild(button);
             row.appendChild(cell);
@@ -43,7 +48,7 @@ const buildBoard = () => {
 
 // loop through all the steps and highlight the column that corresponds to the current step
 const highlightCurrentStep = (currentStep = 0) => {
-    columnElements.forEach((column, i) => {
+    boardElements.forEach((column, i) => {
         column.forEach((button) => {
             button.classList.toggle('highlight', i == currentStep);
         });

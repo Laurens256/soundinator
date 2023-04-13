@@ -43,21 +43,15 @@ table button {
 }
 
 table button:active {
-    transform: scale(0.984);
+    transform: scale(0.985);
 }
 
 td:nth-of-type(4n + 1) button {
     background-color: var(--button-color-2);
 }
 
-[data-row='1'] button.active {
-    background-color: var(--active-color-1);
-}
-[data-row='2'] button.active {
-    background-color: var(--active-color-2);
-}
-[data-row='3'] button.active {
-    background-color: var(--active-color-3);
+table button.active {
+	background-color: var(--active-row-color);
 }
 
 @keyframes moveLine {
