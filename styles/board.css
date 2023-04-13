@@ -1,3 +1,31 @@
+/* play/pause button */
+.togglePlayButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4em;
+    height: 4em;
+    background-color: transparent;
+}
+
+.togglePlayButton svg {
+    max-width: 4em;
+    max-height: 4em;
+    fill: none;
+}
+.togglePlayButton svg path {
+    fill: var(--highlight-color);
+}
+
+.togglePlayButton #svgPause,
+.togglePlayButton.playing #svgPlay {
+    display: none;
+}
+.togglePlayButton.playing #svgPause {
+    display: block;
+}
+
+/* music board */
 table {
 	--table-gap: 0.4em;
 	position: relative;

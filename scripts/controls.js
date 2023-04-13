@@ -37,10 +37,22 @@ const pauseAudio = () => {
     board.classList.remove('playing');
 };
 
-const playButton = document.querySelector('button.playbtn');
-const pauseButton = document.querySelector('button.pausebtn');
+const toggleAudioButton = () => {
+    if (board.classList.contains('playing')) {
+        togglePlayButton.classList.remove('playing');
+        pauseAudio();
+    } else {
+        togglePlayButton.classList.add('playing');
+        playAudio();
+    }
+};
 
-playButton.addEventListener('click', playAudio);
-pauseButton.addEventListener('click', pauseAudio);
+const togglePlayButton = document.querySelector('button.togglePlayButton');
+togglePlayButton.addEventListener('click', toggleAudioButton);
+document.addEventListener('keydown', (e) => {
+    if (e.key == 'Space' || e.code === 'Space') {
+        toggleAudioButton();
+    }
+});
 
 export { delay };
