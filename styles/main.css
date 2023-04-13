@@ -16,6 +16,7 @@
     --active-color-2: #fe7316;
     --active-color-3: #f4b915;
     --highlight-color: #fff;
+    --board-gap: 0.4em;
 }
 
 body {

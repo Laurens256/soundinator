@@ -3,7 +3,7 @@ import { delay } from './controls';
 
 const buildBoard = () => {
     const table = document.querySelector('main.board table');
-	table.setProperty('--delay', delay);
+	table.style.setProperty('--delay', delay + 's');
 
     // loop through rows
     for (let rowIndex = 0; rowIndex < rows; rowIndex++) {
