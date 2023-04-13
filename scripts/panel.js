@@ -19,7 +19,7 @@ window.ripple = async function (index) {
 
         const synth = new Tone.Synth().toDestination();
         // https://tonejs.github.io/docs/14.7.77/Synth.html#volume
-        synth.volume.value = -6;
+        synth.volume.value = -10;
         const now = Tone.now();
         synth.triggerAttack(tone, '8n', now);
 
