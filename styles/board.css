@@ -1,15 +1,15 @@
 table {
     display: flex;
     flex-direction: column;
-    gap: 0.4em;
+    gap: var(--board-gap);
     margin: 0 auto;
-	min-width: 70vw;
+    min-width: 70vw;
     width: 100%;
     max-width: 1200px;
 }
 tr {
     display: flex;
-    gap: 0.4em;
+    gap: var(--board-gap);
     width: 100%;
 }
 td {
@@ -22,7 +22,7 @@ table button {
     aspect-ratio: 1 / 1;
     background-color: var(--button-color-1);
     border-radius: 4px;
-    transition: background-color .04s step-end;
+    transition: background-color 0.04s step-end;
 }
 table button:active {
     transform: scale(0.984);
@@ -42,5 +42,32 @@ td:nth-of-type(4n + 1) button {
 }
 
 button.highlight {
-    background-color: var(--highlight-color) !important;
+    position: relative;
+}
+
+button.highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--highlight-color);
+    transform: translateY(-50%);
+    animation: moveLine calc(var(--delay) - 0.02s) linear;
+    animation-fill-mode: forwards;
+}
+tr:not(:first-child):not(:last-child) button.highlight::after {
+    height: calc(100% + var(--board-gap) * 2 + 8px);
+}
+tr td:last-of-type button.highlight::after {
+    --board-gap: 0em;
+}
+@keyframes moveLine {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% + var(--board-gap));
+    }
 }
