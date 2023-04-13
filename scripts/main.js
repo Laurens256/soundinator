@@ -13,7 +13,7 @@ const sampler = new Tone.Sampler({
 }).toDestination();
 
 // size for the board
-const columns = 12;
+const columns = 16;
 const rows = 3;
 
 // will become a 2D array to keep track of which steps are enabled
