@@ -1,6 +1,7 @@
 import * as Tone from 'tone';
-import { sampler, columns, columnElements, enabledSteps } from './main';
+import { columns, boardElements, enabledSteps } from './main';
 import { highlightCurrentStep } from './board';
+import { players } from './main';
 
 // keep track of the current step
 let currentStep = 0;
@@ -9,21 +10,21 @@ let delay = 0.25;
 const board = document.querySelector('main.board table');
 
 const playAudio = async () => {
-    board.classList.add('playing');
     await Tone.start();
+    board.classList.add('playing');
 
     Tone.Transport.scheduleRepeat((time) => {
         currentStep = (currentStep % columns) + 1;
 
         const currentColumnIndex = currentStep - 1;
-        const currentColumn = columnElements[currentColumnIndex];
+        const currentColumn = boardElements[currentColumnIndex];
 
         // loop through the buttons in the current column
         for (const [row, button] of currentColumn.entries()) {
             // if the step is not enabled, skip it
-            if (!enabledSteps[row][currentColumnIndex]) continue;
-
-            sampler.triggerAttackRelease('A1', '8n', time);
+            if (enabledSteps[row][currentColumnIndex]) {
+                players[row].start();
+            }
         }
         highlightCurrentStep(currentColumnIndex);
     }, delay);

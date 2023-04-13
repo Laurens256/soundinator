@@ -2,25 +2,26 @@ import * as Tone from 'tone';
 import { buildBoard } from './board';
 import './controls';
 
-const urls = {
-    A1: 'sample_3.wav',
-};
 const baseFileUrl = '/audio/';
+const sfx = ['kick.wav', 'snare.wav', 'holy.wav', 'yeat_bell.wav', 'phonk_bell.wav'];
 
-const sampler = new Tone.Sampler({
-    urls: urls,
-    baseUrl: baseFileUrl,
-}).toDestination();
+const players = sfx.map((file) => {
+    const player = new Tone.Player({
+        url: baseFileUrl + file,
+    }).toDestination();
+
+    return player;
+});
 
 // size for the board
 const columns = 16;
-const rows = 3;
+const rows = players.length;
 
 // will become a 2D array to keep track of which steps are enabled
 let enabledSteps = [];
 
 // will become a 2D array to keep track of all the buttons in the board
-let columnElements = [];
+let boardElements = [];
 
 const init = () => {
     enabledSteps = initSteps();
@@ -32,6 +33,6 @@ const initSteps = () => {
     return Array.from({ length: columns }, () => new Array(rows).fill(false));
 };
 
-export { sampler, rows, columns, enabledSteps, columnElements };
+export { rows, columns, enabledSteps, boardElements, players };
 
 init();
