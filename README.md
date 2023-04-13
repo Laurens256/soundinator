@@ -5,32 +5,27 @@
 ---
 
 ## 👩🏼‍💻 How to use
-1. Install Node.js
-- Go to [Node.js](https://nodejs.org/en/) and download the latest version
-- `$ node install` in your terminal
-- `$ node -v` to check if it's installed
-
-2. Clone this repository
+1. Clone this repository
 ```
 $ git clone https://github.com/Laurens256/soundinator.git
 ```
 
-3. Install dependencies
+2. Install dependencies
 ```
 $ cd soundinator
 $ npm i
 ```
 
-4. Run the server
+3. Run the server
 ```
 $ npm run dev
 ```
-In your browser, go to `http://localhost:3000`
+In your browser, go to `http://localhost:8080`
 
 ---
 
 ## 👁️ Demo
-
+[soundinator-fawn.vercel.app](https://soundinator-fawn.vercel.app/)
 
 ---
 
