@@ -48,6 +48,21 @@ table::after {
 }
 
 table.playing::after {
+    animation-play-state: running;
+}
+
+table div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160%;
+    aspect-ratio: 1.6 / 1;
+    background-color: var(--button-color-1);
+    border-radius: 4px;
+}
+table div img {
+    max-width: 90%;
+    max-height: 80%;
 }
 
 tr {
@@ -83,7 +98,8 @@ table button.active {
 
 @keyframes moveLine {
     0% {
-        left: 0;
+        /* 100 / 17(row items) = 5.88 x 160%(size of div) = 9.41% */
+        left: calc(9.41% - var(--table-gap));
     }
     100% {
         left: 100%;

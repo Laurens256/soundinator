@@ -14,6 +14,19 @@ const buildBoard = () => {
         const row = document.createElement('tr');
         row.classList.add('row');
         row.dataset.row = rowIndex + 1;
+
+        const div = document.createElement('div');
+        const img = document.createElement('img');
+        if (rowIndex === 0) img.src = '/img/drum.svg';
+        if (rowIndex === 1) img.src = '/img/bass.svg';
+        if (rowIndex === 2) img.src = '/img/cymbal.svg';
+        if (rowIndex === 3 || rowIndex === 4 || rowIndex === 5) {
+            img.src = '/img/mic.svg';
+        }
+        img.alt = 'instrument corresponding to sound of row';
+        div.appendChild(img);
+        row.appendChild(div);
+
         table.appendChild(row);
 
         row.style.setProperty('--active-row-color', rowColors[rowIndex]);
