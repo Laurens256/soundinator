@@ -87,7 +87,7 @@ const initAudio = () => {
     audio = new THREE.Audio(audioListener);
 
     const audioLoader = new THREE.AudioLoader();
-    audioLoader.load('/audio/phonk_bell.wav', (buffer) => {
+    audioLoader.load('/audio/kick.wav', (buffer) => {
         document.body.classList.remove(classNameForLoading);
 
         audio.setBuffer(buffer);
