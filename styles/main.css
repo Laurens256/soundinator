@@ -29,15 +29,6 @@ a {
     color: inherit;
 }
 
-.logo {
-    position: absolute;
-    top: 1em;
-    width: 60%;
-    margin: 0 auto;
-    right: 2em;
-}
-
-
 video {
 	display: none;
 }
@@ -45,6 +36,7 @@ video {
 main {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
+	margin-bottom: 3rem;
 }
 
 main section {

@@ -14,7 +14,6 @@
 		"vite": "^4.2.1"
 	},
 	"dependencies": {
-		"animejs": "^3.2.1",
 		"three": "^0.106.2",
 		"tone": "^14.7.77"
 	}
