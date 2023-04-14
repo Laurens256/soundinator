@@ -6,9 +6,6 @@
     width: 4em;
     height: 4em;
     background-color: transparent;
-    position: absolute;
-    bottom: 2em;
-    left: 6em;
 }
 
 .togglePlayButton svg {

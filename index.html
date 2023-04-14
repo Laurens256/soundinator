@@ -11,100 +11,23 @@
         <script src="/scripts/main.js" type="module"></script>
     </head>
     <body>
-        <!-- prettier-ignore -->
-        <button class="togglePlayButton">
-            <svg id="svgPlay" width="389" height="512" viewBox="0 0 389 512" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0L388.129 256L0 512V0Z" />
-            </svg>
-            <svg id="svgPause" width="384" height="512" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
-                <path d="M128 0H0V512H128V0Z" />
-                <path d="M383.973 0H255.973V512H383.973V0Z" />
-            </svg>
-        </button>
-
         <main class="board">
-            <img
-                class="logo"
-                src="/img/logo2.png"
-                alt="logo image with click me text"
-            />
-            <table></table>
-            <div class="grid__parent">
-                <div class="grid">
-                    <!-- button.cell[onclick="ripple($)"]*70 -->
-                    <button class="cell" onclick="ripple(1)"></button
-                    ><button class="cell" onclick="ripple(2)"></button
-                    ><button class="cell" onclick="ripple(3)"></button
-                    ><button class="cell" onclick="ripple(4)"></button
-                    ><button class="cell" onclick="ripple(5)"></button
-                    ><button class="cell" onclick="ripple(6)"></button
-                    ><button class="cell" onclick="ripple(7)"></button
-                    ><button class="cell" onclick="ripple(8)"></button
-                    ><button class="cell" onclick="ripple(9)"></button
-                    ><button class="cell" onclick="ripple(10)"></button
-                    ><button class="cell" onclick="ripple(11)"></button
-                    ><button class="cell" onclick="ripple(12)"></button
-                    ><button class="cell" onclick="ripple(13)"></button
-                    ><button class="cell" onclick="ripple(14)"></button
-                    ><button class="cell" onclick="ripple(15)"></button
-                    ><button class="cell" onclick="ripple(16)"></button
-                    ><button class="cell" onclick="ripple(17)"></button
-                    ><button class="cell" onclick="ripple(18)"></button
-                    ><button class="cell" onclick="ripple(19)"></button
-                    ><button class="cell" onclick="ripple(20)"></button
-                    ><button class="cell" onclick="ripple(21)"></button
-                    ><button class="cell" onclick="ripple(22)"></button
-                    ><button class="cell" onclick="ripple(23)"></button
-                    ><button class="cell" onclick="ripple(24)"></button
-                    ><button class="cell" onclick="ripple(25)"></button
-                    ><button class="cell" onclick="ripple(26)"></button
-                    ><button class="cell" onclick="ripple(27)"></button
-                    ><button class="cell" onclick="ripple(28)"></button
-                    ><button class="cell" onclick="ripple(29)"></button
-                    ><button class="cell" onclick="ripple(30)"></button
-                    ><button class="cell" onclick="ripple(31)"></button
-                    ><button class="cell" onclick="ripple(32)"></button
-                    ><button class="cell" onclick="ripple(33)"></button
-                    ><button class="cell" onclick="ripple(34)"></button
-                    ><button class="cell" onclick="ripple(35)"></button
-                    ><button class="cell" onclick="ripple(36)"></button
-                    ><button class="cell" onclick="ripple(37)"></button
-                    ><button class="cell" onclick="ripple(38)"></button
-                    ><button class="cell" onclick="ripple(39)"></button
-                    ><button class="cell" onclick="ripple(40)"></button
-                    ><button class="cell" onclick="ripple(41)"></button
-                    ><button class="cell" onclick="ripple(42)"></button
-                    ><button class="cell" onclick="ripple(43)"></button
-                    ><button class="cell" onclick="ripple(44)"></button
-                    ><button class="cell" onclick="ripple(45)"></button
-                    ><button class="cell" onclick="ripple(46)"></button
-                    ><button class="cell" onclick="ripple(47)"></button
-                    ><button class="cell" onclick="ripple(48)"></button
-                    ><button class="cell" onclick="ripple(49)"></button
-                    ><button class="cell" onclick="ripple(50)"></button
-                    ><button class="cell" onclick="ripple(51)"></button
-                    ><button class="cell" onclick="ripple(52)"></button
-                    ><button class="cell" onclick="ripple(53)"></button
-                    ><button class="cell" onclick="ripple(54)"></button
-                    ><button class="cell" onclick="ripple(55)"></button
-                    ><button class="cell" onclick="ripple(56)"></button
-                    ><button class="cell" onclick="ripple(57)"></button
-                    ><button class="cell" onclick="ripple(58)"></button
-                    ><button class="cell" onclick="ripple(59)"></button
-                    ><button class="cell" onclick="ripple(60)"></button
-                    ><button class="cell" onclick="ripple(61)"></button
-                    ><button class="cell" onclick="ripple(62)"></button
-                    ><button class="cell" onclick="ripple(63)"></button
-                    ><button class="cell" onclick="ripple(64)"></button
-                    ><button class="cell" onclick="ripple(65)"></button
-                    ><button class="cell" onclick="ripple(66)"></button
-                    ><button class="cell" onclick="ripple(67)"></button
-                    ><button class="cell" onclick="ripple(68)"></button
-                    ><button class="cell" onclick="ripple(69)"></button
-                    ><button class="cell" onclick="ripple(70)"></button>
-                </div>
-                <h1 id="tone"></h1>
-            </div>
+            <section>
+                <!-- prettier-ignore -->
+                <button class="togglePlayButton">
+							<svg id="svgPlay" width="389" height="512" viewBox="0 0 389 512" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 0L388.129 256L0 512V0Z" />
+							</svg>
+							<svg id="svgPause" width="384" height="512" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+								<path d="M128 0H0V512H128V0Z" />
+								<path d="M383.973 0H255.973V512H383.973V0Z" />
+							</svg>
+						</button>
+                <table></table>
+            </section>
         </main>
     </body>
+
+    <!-- for camera -->
+    <video autoplay></video>
 </html>
