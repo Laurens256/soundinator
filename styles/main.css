@@ -1,5 +1,4 @@
 @import url(./board.css);
-@import url(./panel.css);
 
 *,
 *::before,
@@ -20,12 +19,6 @@ body {
     background-color: var(--bg-color);
 }
 
-main {
-    display: flex;
-    padding: 23em 0 0 0;
-    gap: 2em;
-}
-
 button {
     border: none;
     cursor: pointer;
@@ -42,4 +35,21 @@ a {
     width: 60%;
     margin: 0 auto;
     right: 2em;
+}
+
+
+video {
+	display: none;
+}
+
+main {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+main section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
 }
